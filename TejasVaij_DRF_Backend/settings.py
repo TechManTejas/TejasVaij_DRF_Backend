@@ -64,6 +64,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://tejasvaij.com",
+    "https://www.tejasvaij.com",
 ]
 
 ROOT_URLCONF = 'TejasVaij_DRF_Backend.urls'
