@@ -20,8 +20,6 @@ class UserSerializer(serializers.ModelSerializer):
             "email",
             "first_name",
             "last_name",
-            "profile_picture",
-            "coupon_code",
-            "coupon_used"
+            "profile_picture"
         ]
         extra_kwargs = {"password": {"write_only": True, "required": True}}

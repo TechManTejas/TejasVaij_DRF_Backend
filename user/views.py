@@ -59,15 +59,12 @@ def google_complete(request):
     client_id = os.getenv("GOOGLE_CLIENT_ID")
 
     token = request.data.get("token")
-    print(token)
 
     if not token:
         return Response({"error": "Token is missing"}, status=400)
 
     try:
         idinfo = id_token.verify_oauth2_token(token, Request(), client_id)
-
-        print(idinfo)
 
         email = idinfo["email"]
         first_name = idinfo.get("given_name", "")
@@ -84,7 +81,6 @@ def google_complete(request):
                 email=email,
                 first_name=first_name,
                 last_name=last_name,
-                account_type=get_user_model().GOOGLE,
                 profile_picture=profile_picture_url,
             )
 
